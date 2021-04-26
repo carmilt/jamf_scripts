@@ -1,16 +1,16 @@
 #!/bin/bash
 
 
-dmgfile="GoogleDriveFileStream.dmg"
-pkgfile="GoogleDriveFileStream.pkg"
-volname="Install Google Drive File Stream"
-logfile="/tmp/google_filestream_script.log"
-url='https://dl.google.com/drive-file-stream/GoogleDriveFileStream.dmg'
+dmgfile="GoogleDrive.dmg"
+pkgfile="GoogleDrive.pkg"
+volname="Install Google Drive"
+logfile="/tmp/google_drive_script.log"
+url='https://dl.google.com/drive-file-stream/GoogleDrive.dmg'
 
 
 echo "--" >> ${logfile}
 echo "`date`: Downloading latest version." >> ${logfile}
-curl -L -s -o /tmp/${dmgfile} ${url}
+curl -s -o /tmp/${dmgfile} ${url}
 echo "`date`: Mounting installer disk image." >> ${logfile}
 hdiutil attach /tmp/${dmgfile} -nobrowse -quiet
 echo "`date`: Installing..." >> ${logfile}
