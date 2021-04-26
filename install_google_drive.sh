@@ -14,7 +14,7 @@ curl -s -o /tmp/${dmgfile} ${url}
 echo "`date`: Mounting installer disk image." >> ${logfile}
 hdiutil attach /tmp/${dmgfile} -nobrowse -quiet
 echo "`date`: Installing..." >> ${logfile}
-installer -pkg /Volumes/${volname}/${pkgfile} -target /
+installer -pkg /Volumes/"${volname}"/${pkgfile} -target /
 echo "`date`: Unmounting installer disk image." >> ${logfile}
 hdiutil detach $(df | grep "${volname}" | awk '{print $1}') -quiet
 echo "`date`: Deleting disk image." >> ${logfile}
